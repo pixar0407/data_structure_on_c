@@ -14,13 +14,15 @@
 //}
 
 
-int rfibo(int n) //recursive 
-{
-	if (n > 1)
-		return rfibo(n - 1) + rfibo(n - 2);
-	else
-		return n;
-}
+//int rfibo(int n) //recursive 
+//{
+//	if (n > 1)
+//		return rfibo(n - 1) + rfibo(n - 2);
+//	else
+//		return n;
+//}
+
+
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
 	char * strArr[3] = { "Simple", "String", "Array" };
