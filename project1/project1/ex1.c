@@ -36,13 +36,24 @@ void Swap(int * ptr1, int * ptr2) //주소를 통해서 접근하기 때문에
 	*ptr2 = temp;
 }
 
+void SqByReference(int * ptr1)
+{
+	int num = *ptr1;
+	*ptr1 = num*num;
+}
+
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	int num1 = 10;
-	int num2 = 20;
-	printf("num1 num2: %d %d\n", num1, num2);
-	Swap(&num1, &num2);
-	printf("num1 num2: %d %d\n", num1, num2);
+	int i = 5;
+	SqByReference(&i);
+	printf("Answer : %d\n", i);
+
+
+	//int num1 = 10;
+	//int num2 = 20;
+	//printf("num1 num2: %d %d\n", num1, num2);
+	//Swap(&num1, &num2);
+	//printf("num1 num2: %d %d\n", num1, num2);
 
 
 
