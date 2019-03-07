@@ -21,18 +21,48 @@
 //	else
 //		return n;
 //}
+void ShowArayElem(int * param, int len) //함수 호출시 값이 아닌 주소로 인자를 받는 방법.
+{
+	int i;
+	for (i = 0; i < len; i++)
+		printf("%d ", param[i]);
+	printf("\n");
+}
 
+void Swap(int * ptr1, int * ptr2) //주소를 통해서 접근하기 때문에
+{
+	int temp = *ptr1;
+	*ptr1 = *ptr2; //해당 주소로 가서 그 값을 바꿈.
+	*ptr2 = temp;
+}
 
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	char * strArr[3] = { "Simple", "String", "Array" };
-	printf("%s \n", strArr); //이건 char ** 형태라고 하네요.
-	printf("%p \n", strArr);
-	printf("%s \n", strArr[0]);
-	printf("%s \n", strArr[1]);
-	printf("%s \n", strArr[2]);
-	printf("How about * : %c \n", *(strArr[2]+1)); //Good!! 
-	printf("How about c : %p \n", strArr[0]);
+	int num1 = 10;
+	int num2 = 20;
+	printf("num1 num2: %d %d\n", num1, num2);
+	Swap(&num1, &num2);
+	printf("num1 num2: %d %d\n", num1, num2);
+
+
+
+	//##3월 7일
+	//int arr1[3] = { 1,2,3 };
+	//int arr2[5] = { 4, 5, 6, 7, 8 };
+	//ShowArayElem(arr1, sizeof(arr1) / sizeof(int));
+	//ShowArayElem(arr2, sizeof(arr2) / sizeof(int));
+	
+
+
+
+	//char * strArr[3] = { "Simple", "String", "Array" };
+	//printf("%s \n", strArr); //이건 char ** 형태라고 하네요.
+	//printf("%p \n", strArr);
+	//printf("%s \n", strArr[0]);
+	//printf("%s \n", strArr[1]);
+	//printf("%s \n", strArr[2]);
+	//printf("How about * : %c \n", *(strArr[2]+1)); //Good!! 
+	//printf("How about c : %p \n", strArr[0]);
 	
 	
 	//int arr[5] = { 1, 2, 3, 4, 5 };
