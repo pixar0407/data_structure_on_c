@@ -49,7 +49,13 @@ void SwapIntPtr(int **dp1, int **dp2)
 }
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
+	int num = 10;
+	int *ptr = &num; // ptr은 &num이에요. 
+	int **dptr = &ptr; // **dptr = ptr이 아니다. 
+	int ***tptr = &dptr;
 
+	printf("%d %d \n", **dptr, ***tptr);
+	printf("%p %p \n", ptr, &ptr); //아하! dptr은 가리키고 싶은 거에요. 무엇을? ptr를 때문에 &ptr이라고 해야함.
 	
 
 
