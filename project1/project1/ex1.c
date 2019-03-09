@@ -41,12 +41,124 @@ void SqByReference(int * ptr1)
 	int num = *ptr1;
 	*ptr1 = num*num;
 }
-
+void SwapIntPtr(int **dp1, int **dp2)
+{
+	int * temp = *dp1;
+	*dp1 = *dp2;
+	*dp2 = temp;
+}
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	int i = 5;
+
+	
+
+
+	//int num1 = 10, num2 = 20, num3 = 30;
+	//int *ptr1 = &num1;
+	//int *ptr2 = &num2;
+	//int *ptr3 = &num3;
+
+	//int * ptrArr[] = { ptr1, ptr2, ptr3 }; //더플 포인터 배열의 선언과 동시에 초기화
+	//int **dptr = ptrArr; // 더블 포인터 배열의 선언과 동시에 초기화???
+
+
+
+	//int num1 = 10, num2 = 20;
+	//int *ptr1, *ptr2;
+	//ptr1 = &num1, ptr2 = &num2;
+	//printf("*ptr1, *ptr2: %d %d \n", *ptr1, *ptr2);
+
+	//SwapIntPtr(&ptr1, &ptr2); // 더블 포인터 선언과 동시에 초기화
+	//printf("*ptr1, *ptr2: %d %d \n", *ptr1, *ptr2);
+
+
+	//double num = 3.14;
+	//double * ptr = &num;
+	//double ** dptr = &ptr;
+	//double *ptr2;
+
+	//printf("%9p %9p \n", ptr, *dptr);
+	//printf("%9g %9g \n", num, **dptr);
+	//ptr2 = *dptr;
+	//*ptr2 = 10.99;
+	//printf("%9g %9g \n", num, **dptr);
+
+
+
+
+	//p349쪽 문제3 답지의 경우 기능마다 함수를 만들어서 사용하였다. 그래서 main 함수에는 3줄 밖에 없다.
+	//int a[5][5] = { 0 } ; //처음에 초기화를 안 해줬더니 문제가 발생했다.
+	//int i, j;
+	//for (i = 0; i < 4; i++) {
+	//	if (i == 0) {
+	//		printf("철희야 국어 영어 수학 국사 순으로 점수 입력해라.\n");
+	//	}
+	//	else if (i == 1) {
+	//		printf("철수야 국어 영어 수학 국사 순으로 점수 입력해라.\n");
+	//	}
+	//	else if (i == 2) {
+	//		printf("영희야 국어 영어 수학 국사 순으로 점수 입력해라.\n");
+	//	}
+	//	else {
+	//		printf("영수야 국어 영어 수학 국사 순으로 점수 입력해라.\n");
+	//	}
+	//	for (j = 0; j < 4; j++) {
+	//		printf("give me specific answer \n");
+	//		scanf("%d", &a[i][j]); //정보 받으면서 바로 저장할래용!
+	//		a[i][4] += a[i][j];
+	//		a[4][j] += a[i][j];
+	//	}
+	//	a[4][4] += a[i][4];
+	//}
+
+	//for (i = 0; i < 5; i++) {
+	//	for (j = 0; j < 5; j++) {
+	//		printf("%d ", a[i][j]);
+	//	}
+	//	printf("\n");
+	//}
+
+
+
+
+	//p349쪽 문제2
+	//int a[2][4] = { 1,2,3,4,5,6,7,8 };
+	//int b[4][2];
+	//int i, j;
+	//for (i = 0; i < 2; i++) {
+	//	for (j = 0; j < 4; j++) {
+	//		printf("%d ", a[i][j]);
+	//		b[j][i] = a[i][j];
+	//	}
+	//	printf("\n");
+	//}
+	//printf("the answer starts here \n \n");
+	//for (i = 0; i < 4; i++) {
+	//	for (j = 0; j < 2; j++) {
+	//		printf("%d ", b[i][j]);
+	//	}
+	//	printf("\n");
+	//}
+
+	//int arr[3][2] = {
+	//	{1, 2},
+	//    {3, 4},
+	//    {6, 7}
+	//};
+	//int i, j;
+	//for (i = 0; i < 3; i++) {
+	//	for (j = 0; j < 2; j++) {
+	//		printf("주소 for %d : %p \n", arr[i][j], &arr[i][j]); // 실행할 때 마다 주소가 새로 할당된다.
+	//	}
+	//}
+		
+
+
+
+	//3월 9일
+	/*int i = 5;
 	SqByReference(&i);
-	printf("Answer : %d\n", i);
+	printf("Answer : %d\n", i);*/
 
 
 	//int num1 = 10;
