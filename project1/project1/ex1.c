@@ -49,13 +49,31 @@ void SwapIntPtr(int **dp1, int **dp2)
 }
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	int num = 10;
-	int *ptr = &num; // ptr은 &num이에요. 
-	int **dptr = &ptr; // **dptr = ptr이 아니다. 
-	int ***tptr = &dptr;
+	int * arr1[5];
+	int * arr2[3][5];
 
-	printf("%d %d \n", **dptr, ***tptr);
-	printf("%p %p \n", ptr, &ptr); //아하! dptr은 가리키고 싶은 거에요. 무엇을? ptr를 때문에 &ptr이라고 해야함.
+	//??? = arr1; 
+	//!!! = arr2;
+	// 1.
+	// ???에는 무엇이 들어가야 할까? 먼저 살펴야 될 것은 arr1이 무엇을 가리키고 있느냐 이다.
+	// *(arr1)이 int형 싱글 포인터 변수를 가리키므로 arr1은 int형 더블 포인터를 가리킨다.
+	//따라서 int **dptr1 = arr1;이 되어야 한다.
+
+	// 2.
+	// !!!에는 무엇이 들어가야 할까? 먼저 살펴야 하는 것은 arr2가 무엇을 가리키고 있느냐는 것이다.
+	// *(arr2)가 int 형 싱글 포인터 변수이고, 가로 길이가 [5]이므로 
+	// int *(*ptr2)[5] =arr2;와 같이 나타낼 수 있다.
+
+
+
+
+	//int num = 10;
+	//int *ptr = &num; // ptr은 &num이에요. 
+	//int **dptr = &ptr; // **dptr = ptr이 아니다. 
+	//int ***tptr = &dptr;
+
+	//printf("%d %d \n", **dptr, ***tptr);
+	//printf("%p %p \n", ptr, &ptr); //아하! dptr은 가리키고 싶은 거에요. 무엇을? ptr를 때문에 &ptr이라고 해야함.
 	
 
 

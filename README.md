@@ -12,13 +12,13 @@ p309-p342<br>
 	int arr1[2][2] = {
 	{1,2}, {3,4}
     };
-	int (*ptr)[2]; // 포인터 연산시 int 만큼 2칸씩 ( int int ) 증가하는 포인터! 
+	int (*ptr)[2]; // 포인터 연산(ptr+1)시 int 만큼 2칸씩 ( int int ) 증가하는 포인터! 
 	tpr=arr1; //
 	printf("%d %d", ptr[1][0], ptr[0][0]); // 주소를 잘 찾아가고, []로 잘 꺼낸다.
 </code></pre>
 ## March, 9, 2019 @ project1
-p343-p369<br> 
-* 포인터의 사용 목적은 가리키기 위함이다. <br>
+p343-p380<br> 
+* 포인터의 사용 목적은 <strong>가리키기<strong> 위함이다. <br>
 <pre><code>
 	int num = 10;
 	int *ptr = &num; // ptr은 &num이에요. 
@@ -33,3 +33,6 @@ p343-p369<br>
 	int * arr1[20]; //arr1이 가리키는 첫 번째 요소는 int형 싱글 포인터이니, '배열이름 arr1'은 int형 더블 포인터가 된다.
 	double * arr2[30]; //arr2가 가리키는 첫 번째 요소는 double형 싱글 포인터이니, '배열이름' arr2는 double형 더블 포인터이다.
 </code></pre>
+## March, 10, 2019 @ project1
+p381-p404<br>
+* 2차원 배열을 함수의 인자로 전달하기
