@@ -47,11 +47,76 @@ void SwapIntPtr(int **dp1, int **dp2)
 	*dp1 = *dp2;
 	*dp2 = temp;
 }
+// 19장
+void SimpleAdder(int n1, int n2)
+{
+	printf("%d + %d = %d \n", n1, n2, n1 + n2);
+}
+void ShowString(char * str)
+{
+	printf("%s \n", str);
+}
+int WhoIsFirst(int age1, int age2, int(*cmp)(int n1, int n2))
+{
+	return cmp(age1, age2);
+}
+int OlderFirst(int age1, int age2)
+{
+	if (age1 > age2)
+		return age1;
+	else if (age1 < age2)
+		return age2;
+	else
+		return 0;
+}
+int YoungerFirst(int age1, int age2)
+{
+	if (age1 < age2)
+		return age1;
+	else if (age1 > age2)
+		return age2;
+	else
+		return 0;
+}
+void ShowAllString(int argc, char * argv[]) {
+	int i;
+	for (i = 0; i < argc; i++)
+		printf("%s \n", argv[i]);
+}
+
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	int * arr1[5];
-	int * arr2[3][5];
+	//19장 함수 포인터 변수 : 함수도 저장 되므로, 저장된 위치가 있을 것이다. 함수의 이름으로 불러들인다.
+	char * str[3] = { "C programming", "C++ Programming", "JAVA Programming" };
+	ShowAllString(3, str);
+	
 
+
+
+	//int age1 = 20;
+	//int age2 = 30;
+	//int first;
+
+	//printf("입장순서 1 \n");
+	//first = WhoIsFirst(age1, age2, OlderFirst);
+	//printf("%d와 %d중 %d가 먼저 입장 \n\n", age1, age2, first);
+	//printf("입장순서 2 \n");
+	//first = WhoIsFirst(age1, age2, YoungerFirst);
+	//printf("%d와 %d중 %d가 먼저 입장 \n\n", age1, age2, first);
+
+
+	//char * str = "Function Pointer";
+	//int num1 = 10, num2 = 20;
+
+	//void(*fptr1)(int, int) = SimpleAdder;
+	//void(*fptr2)(char *) = ShowString;
+
+	//fptr1(num1, num2);
+	//fptr2(str);
+
+
+
+	
 	//??? = arr1; 
 	//!!! = arr2;
 	// 1.
@@ -63,7 +128,7 @@ int main(void) {
 	// !!!에는 무엇이 들어가야 할까? 먼저 살펴야 하는 것은 arr2가 무엇을 가리키고 있느냐는 것이다.
 	// *(arr2)가 int 형 싱글 포인터 변수이고, 가로 길이가 [5]이므로 
 	// int *(*ptr2)[5] =arr2;와 같이 나타낼 수 있다.
-
+	// 3월 10일
 
 
 

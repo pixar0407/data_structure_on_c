@@ -18,7 +18,8 @@ p309-p342<br>
 </code></pre>
 ## March, 9, 2019 @ project1
 p343-p380<br> 
-* 포인터의 사용 목적은 <strong>가리키기<strong> 위함이다. <br>
+* 포인터의 사용 목적은 <strong>가리키기</strong>위함이다. <br>
+* 딱딱한 말로는 변수의 주소값을 저장하기 위함이다.<br>
 <pre><code>
 	int num = 10;
 	int *ptr = &num; // ptr은 &num이에요. 
@@ -34,5 +35,4 @@ p343-p380<br>
 	double * arr2[30]; //arr2가 가리키는 첫 번째 요소는 double형 싱글 포인터이니, '배열이름' arr2는 double형 더블 포인터이다.
 </code></pre>
 ## March, 10, 2019 @ project1
-p381-p404<br>
-* 2차원 배열을 함수의 인자로 전달하기
+p381-p415<br>
