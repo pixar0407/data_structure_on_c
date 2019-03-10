@@ -36,3 +36,27 @@ p343-p380<br>
 </code></pre>
 ## March, 10, 2019 @ project1
 p381-p415<br>
+* TYPE형 구조체 변수의 멤버로 TYPE형 포인터 변수를 둘 수 있다.
+<pre><code>
+	struct point
+	{
+		int xpos;
+		int ypos;
+		struct point * ptr; // 구조체 point의 포인터 변수 선언
+	}
+
+	...
+
+	int main(void)
+	{
+		struct point pos1{1,1};
+		struct point pos1{2,2};
+
+		pos1.ptr = &pos2;
+		pos2.ptr = &pos3;
+		pos3.ptr = &pos1;
+
+		printf("%d %d", pos1.ptr->xpos, pos1.ptr->ypos);
+		...
+	}
+</code></pre>
