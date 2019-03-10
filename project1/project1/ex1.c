@@ -86,9 +86,37 @@ void ShowAllString(int argc, char * argv[]) {
 
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	//19장 함수 포인터 변수 : 함수도 저장 되므로, 저장된 위치가 있을 것이다. 함수의 이름으로 불러들인다.
-	char * str[3] = { "C programming", "C++ Programming", "JAVA Programming" };
-	ShowAllString(3, str);
+	//22장 구조체와 사용자 정의 자료형1
+
+
+
+
+	////21장 문자와 문자열 관련 함수. EOF : End of File 1절과 2절만 하고 넘어감.
+	//int ch;
+
+	//while (1)
+	//{
+	//	ch = getchar();
+	//	if (ch == EOF)
+	//		break;
+	//	putchar(ch);
+	//}
+
+
+
+
+	//int ch1, ch2;
+	//ch1 = getchar();
+	//ch2 = fgetc(stdin);
+
+	//putchar(ch1);
+	//fputc(ch2, stdout);
+
+
+
+	////19장 함수 포인터 변수 : 함수도 저장 되므로, 저장된 위치가 있을 것이다. 함수의 이름으로 불러들인다.
+	//char * str[3] = { "C programming", "C++ Programming", "JAVA Programming" };
+	//ShowAllString(3, str);
 	
 
 
