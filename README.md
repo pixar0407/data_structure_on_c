@@ -36,20 +36,22 @@ p343-p380<br>
 </code></pre>
 ## March, 10, 2019 @ project1
 p381-p415<br>
-* TYPE형 구조체 변수의 멤버로 TYPE형 포인터 변수를 둘 수 있다.
+* TYPE형 구조체(struct) 변수의 멤버로 TYPE형 포인터 변수를 둘 수 있다.
+* typedef 선언
 <pre><code>
-	struct point
+	typedef struct point
 	{
 		int xpos;
 		int ypos;
 		struct point * ptr; // 구조체 point의 포인터 변수 선언
-	}
+	} Point; // 또는 아래와 같이
+	typedef struct point Point;
 
 	...
 
 	int main(void)
 	{
-		struct point pos1{1,1};
+		Point point pos1{1,1}; // 이렇게 내가 선언해 준 type을 바로 써 줄 수 있다.
 		struct point pos1{2,2};
 
 		pos1.ptr = &pos2;
@@ -60,3 +62,6 @@ p381-p415<br>
 		...
 	}
 </code></pre>
+* 공용체(Union)
+
+### 이상 "윤성우 열혈 C 프로그래밍" 복습 끝!

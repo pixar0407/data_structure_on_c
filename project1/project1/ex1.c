@@ -93,16 +93,38 @@ struct circle
 {
 	double radius;
 	struct point * center;
-};
+};// 23장
+typedef int INT;
+typedef int * PTR_INT;
+
+typedef unsigned int UINT;
+typedef unsigned int * PTR_UINT;
+
+typedef unsigned char UCHAR;
+typedef unsigned char * PTR_UCHAR;
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
-	//22장 구조체와 사용자 정의 자료형1
-	struct point cen = { 2, 4 };
-	double rad = 5.5;
+	//23장 구조체와 사용자 정의 자료형2
+	INT num1 = 120;
+	PTR_INT pnum1 = &num1;
 
-	struct circle ring = { rad, &cen };
-	printf("원의 반지름 : %g \n", ring.radius);
-	printf("원의 중심 [%d %d] \n", (ring.center)->xpos, (ring.center)->ypos);
+	UINT num2 = 190;
+	PTR_UINT pnum2 = &num2;
+
+	UCHAR ch = 'Z';
+	PTR_UCHAR pch = &ch;
+
+	printf("%d %u %c \n", *pnum1, *pnum2, *pch);
+
+
+
+	//22장 구조체와 사용자 정의 자료형1
+	//struct point cen = { 2, 4 };
+	//double rad = 5.5;
+
+	//struct circle ring = { rad, &cen };
+	//printf("원의 반지름 : %g \n", ring.radius);
+	//printf("원의 중심 [%d %d] \n", (ring.center)->xpos, (ring.center)->ypos);
 
 
 
