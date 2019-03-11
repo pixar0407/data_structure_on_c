@@ -1,4 +1,7 @@
 #include <stdio.h>
+//Binary search
+
+
 // Selection sort
 void swap(int *x, int *y) { //복습하는 과정에서 배웠듯이 주소로 접근해서 그 값을 바꿔주는 것이다.
 	int temp = *x;
