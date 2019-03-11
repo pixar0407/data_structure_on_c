@@ -35,7 +35,7 @@ p343-p380<br>
 	double * arr2[30]; //arr2가 가리키는 첫 번째 요소는 double형 싱글 포인터이니, '배열이름' arr2는 double형 더블 포인터이다.
 </code></pre>
 ## March, 10, 2019 @ project1
-p381-p415<br>
+p381-p490<br>
 * TYPE형 구조체(struct) 변수의 멤버로 TYPE형 포인터 변수를 둘 수 있다.
 * typedef 선언
 <pre><code>
@@ -46,9 +46,7 @@ p381-p415<br>
 		struct point * ptr; // 구조체 point의 포인터 변수 선언
 	} Point; // 또는 아래와 같이
 	typedef struct point Point;
-
 	...
-
 	int main(void)
 	{
 		Point point pos1{1,1}; // 이렇게 내가 선언해 준 type을 바로 써 줄 수 있다.
@@ -62,6 +60,35 @@ p381-p415<br>
 		...
 	}
 </code></pre>
-* 공용체(Union)
+## March, 11, 2019 @ project1
+p391-p499<br>
+* 공용체(Union)는 같은 주소에 다른 type으로 저장할 수 있게 해준다.
+<pre><code>
+	typedef struct dbshort
+	{
+		unsigned short upper;
+		unsigned short lower;
+	} DBShort;
 
+	typedef union rdbuf 
+	{
+		int iBuf;
+		char bBuf[4];
+		DBShort sBuf;
+	} RDBuf; //라고 선언 후 
+	...
+	printf("상위 2바이트 %u \n", buf.sBuf.upper);               // ( 1 Byte )( 1 Byte )( 1 Byte )( 1 Byte )
+	printf("하위 2바이트 %u \n", buf.sBuf.lower);               // (bBuf[0] )(bBuf[1] )(bBuf[2] )(bBuf[3] )
+	printf("상위 1바이트 아스키 코드: %c \n", buf.bBuf[0]);      // (    sBuf.upper    )(    sBuf.lower    )
+	printf("하위 1바이트 아스키 코드: %c \n", buf.bBuf[3]);      // (                iBuf                  )
+</code></pre>
+* 열거형(Enum)은 이름(ex Do Re Mi)를 연관된 상수로 선언할 수 있도록 한다.
+<pre><code>
+	enum syllable
+	{
+		Do=1, Re=2, Mi=3, Fa=4
+	} Syllable;
+	// 또는 
+	enum color {RED=1, BLUE=2, WHITE=3};
+</code></pre>
 ### 이상 "윤성우 열혈 C 프로그래밍" 복습 끝!

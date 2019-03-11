@@ -102,19 +102,41 @@ typedef unsigned int * PTR_UINT;
 
 typedef unsigned char UCHAR;
 typedef unsigned char * PTR_UCHAR;
+
+typedef struct dbshort
+{
+	unsigned short upper;
+	unsigned short lower;
+} DBShort;
+typedef union rdbuf
+{
+	int iBuf;
+	char bBuf[4];
+	DBShort sBuf;
+} RDBuf;
 //// scanf할 때, %s로 받아들이면, 뛰어 쓰기를 포함한 문장을 입력하면 문제가 된다. 연속으로 단어를 써야 한다.
 int main(void) {
 	//23장 구조체와 사용자 정의 자료형2
-	INT num1 = 120;
-	PTR_INT pnum1 = &num1;
+	RDBuf buf;
+	printf("정수 입력\n");
+	scanf("%d", &(buf.iBuf));
 
-	UINT num2 = 190;
-	PTR_UINT pnum2 = &num2;
+	printf("상위 2바이트 %u \n", buf.sBuf.upper);
+	printf("하위 2바이트 %u \n", buf.sBuf.lower);
+	printf("상위 1바이트 아스키 코드: %c \n", buf.bBuf[0]);
+	printf("하위 1바이트 아스키 코드: %c \n", buf.bBuf[3]);
 
-	UCHAR ch = 'Z';
-	PTR_UCHAR pch = &ch;
 
-	printf("%d %u %c \n", *pnum1, *pnum2, *pch);
+	//INT num1 = 120;
+	//PTR_INT pnum1 = &num1;
+
+	//UINT num2 = 190;
+	//PTR_UINT pnum2 = &num2;
+
+	//UCHAR ch = 'Z';
+	//PTR_UCHAR pch = &ch;
+
+	//printf("%d %u %c \n", *pnum1, *pnum2, *pch);
 
 
 
