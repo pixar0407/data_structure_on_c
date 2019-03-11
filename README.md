@@ -1,13 +1,35 @@
-# data_structure_on_c
+# Data Structure on C
 data structure course, 19-1 at Sogang Univ
 
-* <strong>Data Structure</strong>
+
 ### March, 11, 2019 @project2
 1.3 Algorithm Specification, Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br>
-
-
+* switch 문에서는 break;가 없으면 case에 성립 안해도 아래 코드 다 실행한다. 아니면, return을 줘도 된다.
+<pre><code>
+		switch (COMPARE(list[middle], searchnum)) {
+			case -1: left = middle + 1;
+				break; // 여기서 break가 없으면 문제가 발생한다.
+			case 0: return middle; // 3칸 위의 코드가 실행되고, 나서 뽝! 결과. //return 후에는 빠져 나온다.
+			case 1: right = middle - 1;
+		}
+</code></pre>
+* p14에 while을 if로 바꾸라고 하는데, while로 그대로 해도 되는데?<br>
+* Array of Character
+<pre><code>
+	char list[] = { a, b, c, d }; // (X) 여기서는 a, b, c, d를 변수라고 본다.
+	char list[] = { 'a', 'b', 'c', 'd' }; // (O)
+</code></pre>
+* define으로 선언한 SWAP은 Call by Reference 인가?<br>
+<pre><code>
+	#define SWAP(x,y,t)((t)=(x),(x)=(y),(y)=(t))
+	...
+	SWAP(list[i], list[j], temp); 
+	perm(list, i + 1, n);          //여기서 SWAP된 list가 넘어간다.
+	SWAP(list[i], list[j], temp); 
+	...
+</code></pre>
 ***
-* <strong>C Programming</strong>
+***
 ### March, 6, 2019 @ project1
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
 
@@ -98,4 +120,4 @@ p391-p499<br>
 	// 또는 
 	enum color {RED=1, BLUE=2, WHITE=3};
 </code></pre>
-#### 이상 "윤성우 열혈 C 프로그래밍" 복습 끝!
+#### 이상 "윤성우 열혈 C 프로그래밍" 공부 끝!
