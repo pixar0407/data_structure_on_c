@@ -1,13 +1,13 @@
 # data_structure_on_c
 data structure course, 19-1 at Sogang Univ
 
-1. Data Structure
+* <strong>Data Structure</strong>
 ### March, 11, 2019 @project2
 1.3 Algorithm Specification, Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br>
 
 
 ***
-2. C Programming
+* <strong>C Programming</strong>
 ### March, 6, 2019 @ project1
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
 
