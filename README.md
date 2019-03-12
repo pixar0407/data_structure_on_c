@@ -28,13 +28,23 @@ data structure course, 19-1 at Sogang Univ
 	SWAP(list[i], list[j], temp); 
 	...
 </code></pre>
+1.5 Performance Analysis
+* Space Complexity : S(p) = c + Sp(I)
+  I가 고정값이면, Sp(3)는 0이다. array처럼 dependent on particular I(n개)해야 Sp(I)=Sp(n)=n이다. / Recursion의 횟수도 곱으로 포함된다.<br>
+  Call-by-Reference이면 Sp()=0이다.<br>
+* Time Complexity : s/e 방식을 쓰되, for문이나 while의 마지막 false도 1회차로 count한다.
+<pre><code>
+	int i; //이건 count 하지 않는다.
+	int j=0; //이건 count 한다.
+	return i; //이것도 count 한다.
+</code></pre>
 ***
 ***
 ### March, 6, 2019 @ project1
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
 * 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
   32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다.
-  
+
 * 문자열을 저장하는 포인터 배열
 <pre><code>
 	char * strArr[2]={"Simple", "String"};//char * strArr[2]={0x1004, 0x1048}; 큰따옴표로 묶여서 표현되는 문자열은 그 형태에 상관없이 메모리 공간에 저장된 후 그 주소값을 반환
