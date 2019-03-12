@@ -32,7 +32,15 @@ data structure course, 19-1 at Sogang Univ
 ***
 ### March, 6, 2019 @ project1
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
-
+* 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
+  32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다.
+  
+* 문자열을 저장하는 포인터 배열
+<pre><code>
+	char * strArr[2]={"Simple", "String"};//char * strArr[2]={0x1004, 0x1048}; 큰따옴표로 묶여서 표현되는 문자열은 그 형태에 상관없이 메모리 공간에 저장된 후 그 주소값을 반환
+	printf("%s \n", strArr[0]);
+	printf("%s \n", strArr[1]);
+</code></pre>
 ### March, 7, 2019 @ project1
 p309-p342<br> 
 

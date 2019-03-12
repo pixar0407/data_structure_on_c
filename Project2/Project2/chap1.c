@@ -2,6 +2,33 @@
 #define COMPARE(x,y) (((x)<(y)) ? -1:((x)==(y))? 0 :1)
 #define SWAP(x,y,t)((t)=(x),(x)=(y),(y)=(t))
 #define MAX_SIZE 101
+//fibonacci interative
+int fibo(int n)
+{ // '0'부터 시작해서 n번째의 값을 반환
+	int g, h, f, i;
+	if (n > 1) {
+		g = 0;
+		h = 1;
+		for (i = 2; i <= n; i++) {
+			f = g + h;
+			g = h;
+			h = f;
+		}
+	}
+	else f = n;
+	return f;
+}
+int rfibo(int n)
+{
+	if (n > 1) {
+		return rfibo(n - 1) + rfibo(n - 2);
+	}
+	else {
+		return n;
+	}
+}
+	
+
 //permutation
 void perm(char *list, int i, int n)
 {
@@ -67,6 +94,13 @@ void sort(int list[], int n)
 	}
 }
 int main(void) {
+
+
+	//fibonacci
+	//int n = 5;
+	//printf("this is iterative result : %d \n", fibo(n));
+	//printf("this is recursive result : %d \n", rfibo(n));
+
 	//binary search
 	//int list[12] = { 3, 4, 5, 6, 6, 7, 8, 8,9, 10, 11, 13 };
 	//int searchnum = 5;
@@ -76,8 +110,15 @@ int main(void) {
 	//printf("This is ans : %d \n", ans);
 
 	//permutation
-	char list[] = { 'a', 'b', 'c', 'd' };
-	int i = 0, n = 3;
-	perm(list, i, n);
+	//char list[] = { 'a', 'b', 'c', 'd' };
+	//int i = 0, n = 3;
+	//perm(list, i, n);
+
+	//포인터 변수 크기 확인
+	//int num = 5;
+	//int *pnum = &num;
+	//printf("size of num : %d \n", sizeof(num));
+	//printf("size of pnum : %d \n", sizeof(pnum));
+	//printf("size of &pnum : %d \n", sizeof(&pnum));
 	return 0;
 }
