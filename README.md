@@ -5,14 +5,14 @@ data structure course, 19-1 at Sogang Univ
 ### March, 11, 2019 @project2
 1.3 Algorithm Specification, Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br>
 * switch 문에서는 break;가 없으면 case에 성립 안해도 아래 코드 다 실행한다. 아니면, return을 줘도 된다.
-<pre><code>
+```c
 		switch (COMPARE(list[middle], searchnum)) {
 			case -1: left = middle + 1;
 				break; // 여기서 break가 없으면 문제가 발생한다.
 			case 0: return middle; // 3칸 위의 코드가 실행되고, 나서 뽝! 결과. //return 후에는 빠져 나온다.
 			case 1: right = middle - 1;
 		}
-</code></pre>
+```
 * p14에 while을 if로 바꾸라고 하는데, while로 그대로 해도 되는데?<br>
 * Array of Character
 <pre><code>
@@ -30,7 +30,7 @@ data structure course, 19-1 at Sogang Univ
 </code></pre>
 1.5 Performance Analysis
 * Space Complexity : S(p) = c + Sp(I)
-  I가 고정값이면, Sp(3)는 0이다. array처럼 dependent on particular I(n개)해야 Sp(I)=Sp(n)=n이다. / Recursion의 횟수도 곱으로 포함된다.<br>
+  I가 고정값이면, Sp(3)는 0이다. array처럼 dependent on particular I(n개)해야 Sp(I)=Sp(n)=n이다. Recursion의 횟수도 곱으로 포함된다.<br>
   Call-by-Reference이면 Sp()=0이다.<br>
 * Time Complexity : s/e 방식을 쓰되, for문이나 while의 마지막 false도 1회차로 count한다.
 <pre><code>
