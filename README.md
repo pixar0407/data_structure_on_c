@@ -1,5 +1,7 @@
 # Data Structure on C
-data structure course, 19-1 at Sogang Univ
+data structure course, 19-1 at Sogang Univ<br>
+Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
+
 ### March, 13, 2019 @project2
 * Array as ADT(Abstract Data Type)<br>
   index를 넣으면 상응하는 value가 나오는 함수이다. (1:1대응)<br>
@@ -22,7 +24,7 @@ data structure course, 19-1 at Sogang Univ
 	printf("\n\n");
 ```
 ### March, 11, 2019 @project2
-1.3 Algorithm Specification, Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br>
+1.3 Algorithm Specification<br>
 * switch 문에서는 break;가 없으면 case에 성립 안해도 아래 코드 다 실행한다. 아니면, return을 줘도 된다.
 ```c
 	switch (COMPARE(list[middle], searchnum)) {
@@ -64,26 +66,61 @@ p274-p308, book "윤성우 열혈 C 프로그래밍" <br>
 * 포인터 형과 크기<br>
   > 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
   32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다. (1 byte = 8 bits) <br>
-  32bit에서 int형, double형, char형이든 pointer의 크기는 4byte이다.
-  그런데 * pnum과 같이 pnum이라는 주소를 부른 후 해당 값을 뽑을 때, int면 4, double이면 8byte처럼 판단하기 위해 포인터 형이 필요.
+  32bit에서 int형, double형, char형이든 pointer의 크기는 4byte이다.<br>
+  그런데 * pnum과 같이 pnum이라는 주소를 부른 후 해당 값을 뽑을 때, int면 4, double이면 8byte 어느 정도 크기로 읽을지 판단하기 위해 포인터 형이 필요.
 
+* 포인터 배열은 포인터 변수로 이뤄진 배열을 의미한다.
+```c
+	int num1=10; num2=20; num3=30;
+	int* arr[3]={&num1, &num2, &num3};
+
+	printf("%d", *arr[0]);//10 
+```
+* 문자열을 가리키는 포인터 배열
+```c
+    char str1[] = "My String";   // 다른 위치를 가리킬 수 없음. 내용 변경이 가능
+	char * str2 = "Your String"; // 다른 위치를 가리킬 수 있음. 내용 변경이 불가능
+
+	printf("%p \n", str1); //004FF9AC
+	printf("%p \n", str1[0]); //0000004D 안됨. 이건 주소값이 아니야.
+	printf("%c \n", *(str1)); //M 
+	printf("%c \n", *(str1+1)); //y 주소값으로 가서 s안의 c를 반환하다.
+	
+	printf("%p \n", str2); //01237B3C
+	printf("%p \n", str2[0]); //00000059 안됨
+	printf("%c \n", str2[1]); //o 
+
+	printf("%s \n", str1); //My String 주소값을 넣으면, s가 반환된다.
+	printf("%s \n", str2); //Your String
+
+	printf("%c \n", str1); //? 안됨
+	printf("%c \n", str1[0]); //M
+	printf("%c \n", *str1); //M 
+	printf("%c \n", str2); //< 안됨
+	printf("%c \n", *str2); //Y 
+
+	printf("%c \n", str1[3]); //S 주소값으로 가서 s안의 c를 반환하다.
+	printf("%c \n", str2[3]); //r 엥 얘도 배열로 할당된 것 처럼 행동하는데?
+```
 * 문자열을 저장하는 포인터 배열
 ```c
 	char * strArr[2]={"Simple", "String"};//char * strArr[2]={0x1004, 0x1048}; 큰따옴표로 묶여서 표현되는 문자열은 그 형태에 상관없이 메모리 공간에 저장된 후 그 주소값을 반환
-	printf("%s \n", strArr[0]);
-	printf("%s \n", strArr[1]);
+	printf("%s \n", strArr[0]);//Simple 주소값을 넣으면, s가 반환된다.
+	printf("%s \n", strArr[1]);//String 주소값을 넣으면, s가 반환된다.
+
+	printf("%c \n", strArr[0][1]);//i 
+	printf("%c \n", strArr[1][0]);//S
 ```
 ### March, 7, 2019 @ project1
 p309-p342<br> 
-
-* arr[i]==*(arr+i)<br>
+* arr[i]== * (arr+i)<br> //배열의 이름을 '상수형태의 포인터'라고 한다. arr에 주소를 바꿀 수 없다.
 * (arr+i)==&arr[i]<br> //arr+i 했을 때, i만큼 증가하는 것에서 int인지, char 인지 어떻게 알지? sizeof(int)로 알 수 있다.
 ```c
 	int arr1[2][2] = {
 	{1,2}, {3,4}
     };
 	int (*ptr)[2]; // 포인터 연산(ptr+1)시 int 만큼 2칸씩 ( int int ) 증가하는 포인터! 
-	tpr=arr1; //
+	ptr=arr1; //
 	printf("%d %d", ptr[1][0], ptr[0][0]); // 주소를 잘 찾아가고, []로 잘 꺼낸다.
 ```
 ### March, 9, 2019 @ project1

@@ -94,8 +94,9 @@ void sort(int list[], int n)
 	}
 }
 int main(void) {
+	
 
-	int i = 1, j = 2;
+	/*int i = 1, j = 2;
 	double d = 3.4;
 	char c = 'j';
 	char *pc = &c;
@@ -104,8 +105,7 @@ int main(void) {
 	printf("%d \n", sizeof(pii));
 	printf("%d \n", sizeof(pd));
 	printf("%d \n", sizeof(pc));
-	printf("%d", sizeof(d));
-
+	printf("%d", sizeof(d));*/
 	
 
 
