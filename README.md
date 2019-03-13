@@ -1,7 +1,7 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ
 ### March, 13, 2019 @project2
-* Array as ADT(Abstract Data Type)
+* Array as ADT(Abstract Data Type)<br>
   index를 넣으면 상응하는 value가 나오는 함수이다. (1:1대응)<br>
   
   > Array(Function) <br>
@@ -61,8 +61,10 @@ data structure course, 19-1 at Sogang Univ
 ***
 ### March, 6, 2019 @ project1
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
-* 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
-  32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다.
+* 포인터 형과 크기<br>
+  > 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
+  32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다.<br>
+  32bit에서 int형, double형, char형이든 pointer의 크기는 4byte이다.
 
 * 문자열을 저장하는 포인터 배열
 ```c

@@ -95,19 +95,16 @@ void sort(int list[], int n)
 }
 int main(void) {
 
-	int i, j, count=1;
-	int list[5][5];
-	for (i = 0; i < 5; i++)
-		for (j = 0; j < 5; j++)
-			list[i][j] = count++;
-
-	for (i = 0; i < 5; i++) {
-		for (j = 0; j < 5; j++) {
-			printf("%5d", list[i][j]);
-		}
-		printf("\n");
-	}
-	printf("\n\n");
+	int i = 1, j = 2;
+	double d = 3.4;
+	char c = 'j';
+	char *pc = &c;
+	int *pii = &i;
+	double *pd = &d;
+	printf("%d \n", sizeof(pii));
+	printf("%d \n", sizeof(pd));
+	printf("%d \n", sizeof(pc));
+	printf("%d", sizeof(d));
 
 	
 
