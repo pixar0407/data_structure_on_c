@@ -4,9 +4,10 @@ data structure course, 19-1 at Sogang Univ
 * Array as ADT(Abstract Data Type)
   index를 넣으면 상응하는 value가 나오는 함수이다. (1:1대응)<br>
   
-  Array(Function) | *Array* Create(j, list) - Creater, j는 크기. 결과로 list라는 Array을 return 해야 한다. <br>
-                  | *Item* Retrieve(A, i) - Observer, A라는 Array의 i 인덱스에 접근하여 하면, item를 return해야 한다. <br>
-                  | *Array* Store(A, i, x) - Transformer, A라는 Array의 i 인덱스에 접근하여, x 값을 저장하고, 다시 Array를 반환한다.	 <br>
+  > Array(Function) <br>
+  | *Array* Create(j, list) - Creater, j는 크기. 결과로 list라는 Array을 return 해야 한다. <br>
+  | *Item* Retrieve(A, i) - Observer, A라는 Array의 i 인덱스에 접근하여 하면, item를 return해야 한다. <br>
+  | *Array* Store(A, i, x) - Transformer, A라는 Array의 i 인덱스에 접근하여, x 값을 저장하고, 다시 Array를 반환한다.	 <br>
 
 ### March, 12, 2019 @project2
 1.5.3 Asymptotic Notation
