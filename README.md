@@ -63,8 +63,9 @@ data structure course, 19-1 at Sogang Univ
 p274-p308, book "윤성우 열혈 C 프로그래밍" <br> 
 * 포인터 형과 크기<br>
   > 포인터 변수의 크기는 프로그램이 32bits로 돌아가냐, 64bits으로 돌아가냐에 따라 다르다.<br>
-  32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다.<br>
+  32bit의 경우, 주소를 32bits로 표현하기 때문에 4byte고 64bit의 경우, 8byte이다. (1 byte = 8 bits) <br>
   32bit에서 int형, double형, char형이든 pointer의 크기는 4byte이다.
+  그런데 * pnum과 같이 pnum이라는 주소를 부른 후 해당 값을 뽑을 때, int면 4, double이면 8byte처럼 판단하기 위해 포인터 형이 필요.
 
 * 문자열을 저장하는 포인터 배열
 ```c
