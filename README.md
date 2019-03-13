@@ -1,7 +1,25 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ
+### March, 13, 2019 @project2
+* Array as ADT(Abstract Data Type)
+  index를 넣으면 상응하는 value가 나오는 함수이다. (1:1대응)<br>
+  
+  Array(Function) | *Array* Create(j, list) - Creater, j는 크기. 결과로 list라는 Array을 return 해야 한다. <br>
+                  | *Item* Retrieve(A, i) - Observer, A라는 Array의 i 인덱스에 접근하여 하면, item를 return해야 한다. <br>
+                  | *Array* Store(A, i, x) - Transformer, A라는 Array의 i 인덱스에 접근하여, x 값을 저장하고, 다시 Array를 반환한다.	 <br>
 
-
+### March, 12, 2019 @project2
+1.5.3 Asymptotic Notation
+* 팁 : 2차원 배열 동일한 간격으로 뽑고 싶으면
+```c
+	for (i = 0; i < 5; i++) {
+		for (j = 0; j < 5; j++) {
+			printf("%5d", list[i][j]); // 이와 같이 간격을 주어 출력하면 된다.
+		}
+		printf("\n");
+	}
+	printf("\n\n");
+```
 ### March, 11, 2019 @project2
 1.3 Algorithm Specification, Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br>
 * switch 문에서는 break;가 없으면 case에 성립 안해도 아래 코드 다 실행한다. 아니면, return을 줘도 된다.
@@ -55,6 +73,7 @@ p274-p308, book "윤성우 열혈 C 프로그래밍" <br>
 p309-p342<br> 
 
 * arr[i]==*(arr+i)<br>
+* (arr+i)==&arr[i]<br> //arr+i 했을 때, i만큼 증가하는 것에서 int인지, char 인지 어떻게 알지? sizeof(int)로 알 수 있다.
 ```c
 	int arr1[2][2] = {
 	{1,2}, {3,4}

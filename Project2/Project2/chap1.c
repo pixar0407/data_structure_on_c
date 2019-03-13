@@ -95,6 +95,22 @@ void sort(int list[], int n)
 }
 int main(void) {
 
+	int i, j, count=1;
+	int list[5][5];
+	for (i = 0; i < 5; i++)
+		for (j = 0; j < 5; j++)
+			list[i][j] = count++;
+
+	for (i = 0; i < 5; i++) {
+		for (j = 0; j < 5; j++) {
+			printf("%5d", list[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n\n");
+
+	
+
 
 	//fibonacci
 	//int n = 5;
