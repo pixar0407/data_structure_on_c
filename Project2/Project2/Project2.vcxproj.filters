@@ -21,5 +21,8 @@
     <ClCompile Include="chap2_1.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="chap1_2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

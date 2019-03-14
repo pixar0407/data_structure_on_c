@@ -242,4 +242,62 @@ p391-p499<br>
 	// 또는 
 	enum color {RED=1, BLUE=2, WHITE=3};
 ```
+### March, 15, 2019 @Project2
+* 문자열 단위 입출력 함수
+```c
+	char str[7];
+	int i;
+
+	for (i = 0; i < 3; i++)
+	{
+		//gets(str) str이 6개의 character를 넘길 경우 문제가 된다. 마지막 일곱째는 엔터가 입력된다. Null문자를 입력하여 일반적인 문장을 완성한다.
+		fgets(str, sizeof(str), stdin); //sizeof(str)로 인해서 gets의 문제를 없애준다.
+		puts(str);//문장 출력 후 개행을 해준다.
+		fputs(str,stdout); printf("\n"); // fputs는 출력 후 개행이 없다.
+		printf("Read %d: %s \n", i + 1, str);
+		//12345678910112131415161718191202122
+		//123456
+		//123456
+		//Read 1: 123456
+		//789101
+		//789101
+		//Read 2: 789101
+		//121314
+		//121314
+		//Read 3: 121314
+		... 또는
+		//we 엔터
+		//we
+
+		//we
+
+		//Read 1: we
+
+		//love 엔터
+		//love
+
+		//love
+
+		//Read 2: love
+
+		//you엔터
+		//you
+
+		//you
+
+		//Read 3: you
+
+	}
+```
+* 문자 단위의 입출력 함수
+```c
+	int ch;
+	while(1)
+	{
+		ch=getchar();
+		if(ch==EOF) //ctrl+Z를 의미한다.
+			break;
+		putchar(ch);
+	}
+```
 #### 이상 "윤성우 열혈 C 프로그래밍" 공부 끝!
