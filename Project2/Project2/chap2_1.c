@@ -1,4 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h> // c언어 표준 라이브러리
+int** make2dArray(int rows, int cols)
+{
+	int **x, i;
+	x = (int**)malloc(cols* sizeof(int*));
+
+	for (i = 0; i < cols; i++)
+		x[i] = (int*)malloc(rows * sizeof(int));
+
+	return x;
+}
 int main(void)
 {
 	//1
@@ -38,12 +49,94 @@ int main(void)
 
 
 	//3
-	int num1 = 10, num2 = 20, num3 = 30;
-	int* arr[3] = { &num1, &num2, &num3 };
+	//int num1 = 10, num2 = 20, num3 = 30;
+	//int* arr[3] = { &num1, &num2, &num3 };
 
-	printf("%d \n", *arr[0]);//10 
-	printf("%p \n", arr[0]);//0055F788
-	printf("%p \n", arr);//0055F75C
-	printf("%p \n", &num1);//0055F788
+	//printf("%d \n", *arr[0]);//10 
+	//printf("%p \n", arr[0]);//0055F788
+	//printf("%p \n", arr);//0055F75C
+	//printf("%p \n", &num1);//0055F788
+	//return 0;
+
+
+
+	//4
+	//int arr_1[5];
+	//int *arr_2;
+	//int i;
+	//
+	//for (i = 0; i < 5; i++) {
+	//	arr_1[i] = i + 1;
+	//}
+
+	////arr_2 = (int*)malloc(sizeof(int) * 5); // 4type 짜리 5개.
+
+	//for (i = 0; i < 5; i++) {
+	//	arr_2[i] = arr_1[i];
+	//}
+	//for (i = 0; i < 5; i++) {
+	//	printf("%3d", arr_2[i]);
+	//}
+	//free(arr_2);
+
+	//printf("\n");
+	//for (i = 0; i < 5; i++) {
+	//	printf("%3d", arr_1[i]);
+	//}
+
+
+
+	//5
+	int **myArray;
+	int i, j;
+	int col = 5, row = 10;
+	myArray = make2dArray(col, row);
+
+	for (i = 0; i < col; i++) {
+		for (j = 0; j < row; j++) {
+			myArray[i][j] = i + j*2;
+		}
+	}
+	
+	for (i = 0; i < col; i++) {
+		for (j = 0; j < row; j++) {
+			printf("%3d", myArray[i][j]);
+		}
+		printf("\n");
+	}
+	
+	for (i = 0; i < col; i++) {
+		for (j = 0; j < row; j++) {
+			if (j==0) {
+				printf("(%10p) %10p", myArray + i, myArray[i]);//바로 아래의 myArray[i] + 0과 동일.
+			}
+			printf("%10p", (myArray[i] + j));
+		}
+		printf("\n");
+	}
+	
+	printf("%p \n", myArray); //001559D0
+	printf("%p \n", myArray[0]); //001555F8
+	printf("%p \n", *myArray);//myArray가 가리키는 것은 포인터 myArray[0] 001555F8
+	printf("%p \n", myArray[1]); //012558E0
+	printf("%p \n", *(myArray + 1)); //012558E0
+
+	printf("%d \n", **myArray);//myArray를 따라가면 최종적으로 myArray[0][0]
+	printf("%d \n", *myArray[0]);//0
+	printf("%d \n", *(myArray[0]+1));//1
+	printf("%d \n", **(myArray + 1));//2
+
+	for (i = 0; i < col; i++)
+		free(myArray[i]);
+	free(myArray);
+
+	//6
+	//int i=9;
+	//int *pi = &i;
+	//int **dp = 
+	//printf("%p \n", pi);//0057FC0C
+	//printf("%p \n", &pi);//00CFFAB8
+	//printf("%p \n", &i);//0057FC0C
+
 	return 0;
 }

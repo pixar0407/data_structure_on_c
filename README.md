@@ -1,7 +1,37 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ<br>
 Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
+### March, 14, 2019 @project2
+* 메모리 동적 할당
+  프로그램 실행 중 필요한 만큼의 메모리를 할당 후 사용. 사용 후 프로그램 종료 전 반드시 해제.
+```c
+	int** make2dArray(int rows, int cols)
+	{
+		int **x, i;
+		x = (int**)malloc(cols* sizeof(int*)); //x는 double point이다. 
 
+		for (i = 0; i < rows; i++)
+			x[i] = (int*)malloc(rows * sizeof(int));
+
+		return x;
+	}
+	... 	
+    
+    printf("%p \n", myArray); //001559D0
+	printf("%p \n", myArray[0]); //001555F8
+	printf("%p \n", *myArray);//myArray가 가리키는 것은 포인터 myArray[0] 001555F8
+	printf("%p \n", myArray[1]); //012558E0
+	printf("%p \n", *(myArray + 1)); //012558E0
+
+	printf("%d \n", **myArray);//myArray를 따라가면 최종적으로 myArray[0][0]
+	printf("%d \n", *myArray[0]);//0
+	printf("%d \n", *(myArray[0]+1));//1
+	printf("%d \n", **(myArray + 1));//2
+
+	for (i = 0; i < col; i++)
+		free(myArray[i]); //해제도 malloc 해준 만큼 해줘야 한다.
+	free(myArray);
+```
 ### March, 13, 2019 @project2
 * Array as ADT(Abstract Data Type)<br>
   index를 넣으면 상응하는 value가 나오는 함수이다. (1:1대응)<br>
@@ -131,8 +161,15 @@ p343-p380<br>
 * 포인터의 사용 목적은 <strong>가리키기</strong>위함이다. <br>
 * 딱딱한 말로는 변수의 주소값을 저장하기 위함이다.<br>
 ```c
+	int i=9;
+	int *pi = &i;
+	printf("%p \n", pi);//0057FC0C
+	printf("%p \n", &pi);//00CFFAB8
+	printf("%p \n", &i);//0057FC0C
+```
+```c
 	int num = 10;
-	int *ptr = &num; // ptr은 &num이에요. 
+	int *ptr = &num; // ptr은 &num이에요. &ptr은 따로 있다.
 	int **dptr = &ptr; // **dptr = ptr이 아니다. 
 	int ***tptr = &dptr;
 
