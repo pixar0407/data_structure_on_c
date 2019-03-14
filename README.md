@@ -2,7 +2,8 @@
 data structure course, 19-1 at Sogang Univ<br>
 Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
 ### March, 14, 2019 @project2
-* 메모리 동적 할당
+2.2 Dynamical Allocated Arrays<br>
+* 메모리 동적 할당<br>
   프로그램 실행 중 필요한 만큼의 메모리를 할당 후 사용. 사용 후 프로그램 종료 전 반드시 해제.
 ```c
 	int** make2dArray(int rows, int cols)
@@ -16,7 +17,6 @@ Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
 		return x;
 	}
 	... 	
-    
     printf("%p \n", myArray); //001559D0
 	printf("%p \n", myArray[0]); //001555F8
 	printf("%p \n", *myArray);//myArray가 가리키는 것은 포인터 myArray[0] 001555F8
@@ -223,6 +223,10 @@ p391-p499<br>
 		char bBuf[4];
 		DBShort sBuf;
 	} RDBuf; //라고 선언 후 
+	...
+	RDBuf buf;
+	printf("정수 입력 : ");
+	scanf("%d", &(buf.iBuf));
 	...
 	printf("상위 2바이트 %u \n", buf.sBuf.upper);               // ( 1 Byte )( 1 Byte )( 1 Byte )( 1 Byte )
 	printf("하위 2바이트 %u \n", buf.sBuf.lower);               // (bBuf[0] )(bBuf[1] )(bBuf[2] )(bBuf[3] )
