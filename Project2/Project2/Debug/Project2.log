@@ -1,2 +1,4 @@
 ﻿  chap1_2.c
+c:\users\kimyanggon\source\repos\project2\project2\chap1_2.c(5): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap1_2.c(4): warning C4101: 'str' :참조되지 않은 지역 변수입니다.
   Project2.vcxproj -> C:\Users\Kimyanggon\source\repos\Project2\Debug\Project2.exe

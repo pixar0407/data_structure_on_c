@@ -243,6 +243,7 @@ p391-p499<br>
 	enum color {RED=1, BLUE=2, WHITE=3};
 ```
 ### March, 15, 2019 @Project2
+p416-p433
 * 문자열 단위 입출력 함수
 ```c
 	char str[7];
@@ -250,7 +251,7 @@ p391-p499<br>
 
 	for (i = 0; i < 3; i++)
 	{
-		//gets(str) str이 6개의 character를 넘길 경우 문제가 된다. 마지막 일곱째는 엔터가 입력된다. Null문자를 입력하여 일반적인 문장을 완성한다.
+		//gets(str) str이 6개의 character를 넘길 경우 문제가 된다. 마지막 일곱째는 엔터가 입력된다. Null문자가 있어야 문자열이다.
 		fgets(str, sizeof(str), stdin); //sizeof(str)로 인해서 gets의 문제를 없애준다.
 		puts(str);//문장 출력 후 개행을 해준다.
 		fputs(str,stdout); printf("\n"); // fputs는 출력 후 개행이 없다.
@@ -299,5 +300,20 @@ p391-p499<br>
 			break;
 		putchar(ch);
 	}
+```
+* 입력 버퍼 비우기
+```c
+	char perID[7];
+	char name[10];
+
+	fputs("주민등록 6자리 입력", stdout);
+	fgets(perID, sizeof(perID), stdin);//엔터를 포함하여 총7개가 입력되었다. 그러나 최대 6개를 읽어들인다(왜냐면 한자리는 Null이 자동으로 추가). 엔터가 남는다. 
+	ClearLineFromReadBuffer(); // 이 함수는 엔터가 입력되기 전까지 블랙홀이다. 입력되는 모든 것을 자기가 자기 버퍼로 흡수.
+
+	fputs("이름입력:", stdout);
+	fgets(name, sizeof(name), stdin);
+
+	printf("주민등록번호 : %s \n", perID);
+	printf("이름: %s\n", name);
 ```
 #### 이상 "윤성우 열혈 C 프로그래밍" 공부 끝!
