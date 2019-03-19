@@ -1,6 +1,9 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ<br>
 Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
+### March, 19, 2019 @project2 chap2_4.c
+2.4.3 Polynomial Addition<br>
+* 구버전 polynomial 선언에서 여러 연산 후 degree를 바꿔주는 것을 잊으면 안된다. <br>
 ### March, 14, 2019 @project2
 2.2 Dynamical Allocated Arrays<br>
 * 메모리 동적 할당<br>

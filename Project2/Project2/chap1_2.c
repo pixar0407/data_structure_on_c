@@ -18,11 +18,6 @@ int main(void)
 	printf("주민등록번호 : %s \n", perID);
 	printf("이름: %s\n", name);
 
-
-
-
-
-
 	//char str[7];
 	//int i;
 	//printf("hohohoj");

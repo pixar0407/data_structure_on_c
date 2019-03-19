@@ -1,4 +1,13 @@
-﻿  chap1_2.c
-c:\users\kimyanggon\source\repos\project2\project2\chap1_2.c(5): warning C4101: 'i' :참조되지 않은 지역 변수입니다.
-c:\users\kimyanggon\source\repos\project2\project2\chap1_2.c(4): warning C4101: 'str' :참조되지 않은 지역 변수입니다.
+﻿  chap2_4.c
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(21): warning C4013: 'strcmp'이(가) 정의되지 않았습니다. extern은 int형을 반환하는 것으로 간주합니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(92): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(93): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(95): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(97): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(98): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(99): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(103): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(104): warning C4244: '함수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(118): warning C4101: 'x' :참조되지 않은 지역 변수입니다.
+c:\users\kimyanggon\source\repos\project2\project2\chap2_4.c(113): warning C4716: 'Add': 값을 반환해야 합니다.
   Project2.vcxproj -> C:\Users\Kimyanggon\source\repos\Project2\Debug\Project2.exe
