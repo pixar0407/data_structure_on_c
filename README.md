@@ -1,6 +1,10 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ<br>
 Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
+### March, 21, 2019 @HW Done_chap1_1_2.c
+* 코드 짜기 전에 반드시 추상화된 형태의 도표 그리고 할 것. <br>
+자료구조 첫 과제 진행하는데, 생각보다 시간이 오래 걸렸다. 24시간 걸림. <br>
+알고리즘 짜는 것에는 시간이 얼마 안 걸렸는데, 알고리즘에 구멍이 있었고, 또 구현하는데, C가 아직도 익숙치 않다.<br>
 ### March, 19, 2019 @project2 chap2_4.c
 2.4.3 Polynomial Addition<br>
 * 구버전 polynomial 선언에서 여러 연산 후 degree를 바꿔주는 것을 잊으면 안된다. <br>
