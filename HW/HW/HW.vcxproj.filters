@@ -21,7 +21,19 @@
     <ClCompile Include="chap1_1_3.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Done_chap1_1_2.c">
+    <ClCompile Include="chap1_1_2_Done.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap1_2_1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap1_2_2.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap1_1_4_Done.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap1_2_3_Done.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
