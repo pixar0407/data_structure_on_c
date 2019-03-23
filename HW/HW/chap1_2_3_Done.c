@@ -1,9 +1,10 @@
-#include <stdio.h>  //HW1-2의 솔루션2 
+#include <stdio.h>  //HW1-2의 솔루션1
 #include <stdlib.h> // atoi 함수가 선언된 헤더 파일
 #include <string.h> //strlen, strcpy 함수가 선언된 헤더 파일
 void check(char *str, int sol);
 void append(char *dst, char c);
 void func(char *list, char* ans, int length, int *depth, char c,int sol); //recursion이 일어나는 함수
+int doublezero(char *str);
 void main(void) {
 	char str[101]; //최초의 사용자로 부터 받는 입력입니다. 불변
 	int sol;//두번째 입력
@@ -18,6 +19,12 @@ void main(void) {
 	
 	func(str, ans, length, &depth, 'n',sol);
 }
+//void append(char *dst, char c) {//문자열의 끝에 문자를 추가하는 함수
+//	char *p = dst;
+//	while (*p != '\0') p++; // 문자열 끝 탐색
+//	*p = c;
+//	*(p + 1) = '\0';
+//}
 void append(char *dst, char c) {//문자열의 끝에 문자를 추가하는 함수
 	char *p = dst;
 	while (*p != '\0') p++; // 문자열 끝 탐색
@@ -68,16 +75,12 @@ void func(char *list, char* ans, int length, int *depth, char c, int sol) {//lis
 
 		func(list, ans, length, depth, list[(*depth)], sol);
 	}
-	else { //2) 입력 받은 숫자가 모두 쓰인 경우. 사칙 연산이 맞는지 확인하고, 맞다면 출력을 해준다.
-		check(ans,sol);
+	else { //2) 입력 받은 숫자가 모두 쓰인 경우. 
+		check(ans,sol);//사칙 연산이 맞는지 확인하고, 맞다면 출력을 해준다.
 		ans[0] = '\0'; //최종 출력 후 ans와 depth를 초기화.
 		*(depth) = 0;
 	}
 }
-
-
-
-//임시 시험용
 void check(char *str, int sol) {
 	int num[101] = { 0 };
 	char operator[101] = { "" };
@@ -99,15 +102,7 @@ void check(char *str, int sol) {
 		} // 끝에 숫자 연속으로 나와서 문제가 될 수 있음.
 	}
 
-
-	////나눈 결과 확인
-	//printf("operator : %s\n", operator);
-	//for (i = 0; i < 101; i++) {
-	//	if (num[i])
-	//		printf("%d\n", num[i]);
-	//}
-
-	//num과 operator만 가지고 놀아보자
+	//num[]과 operator[]만 가지고 연산 결과를 출력하여 sol과 비교한다.
 	for (i = 0; i < 101; i++) {
 		if (operator[i] == NULL) {
 			break;
@@ -120,9 +115,24 @@ void check(char *str, int sol) {
 			}
 		}
 	}
-	//if(sol==num[0])
-	printf("%d\n", num[0]);
-	printf("%s\n", str);
-}
+	if (sol == num[0] && doublezero(str) ) //doublezero는 00나 01과 같이 존재하지 않는 형태의 수를 파악하여 출력x.
+		printf("%s\n", str);
 
-// 1) none, 2) 00 3) 곱셈은 먼저
+
+	//printf("%s\n", str);
+
+}
+int doublezero(char *str) {
+	int i;
+	int j=0;
+	for (i = 0; i < strlen(str); i++) {
+		if ( ((str[i] == '0') && (str[i + 1] == '0')) || ((str[i] >= '0'&&str[i] <= '9')&&(str[i-1]=='0'))) {
+			return 0;
+			break;
+		}
+	}
+}
+// 190322 문제점 
+//1) none을 출력해야 한다. (main함수의 마지막에 나와야 하지 않을까 / func안에서 check와 소통하면 되지 않을까?)
+//2) (해결) 00 : 이런 수가 없다. > doublezero라는 함수를 만들어서 문제 해결
+//3) 곱셈은 먼저 : 내가 사직 연산을 설계를 잘못했다. 

@@ -36,5 +36,8 @@
     <ClCompile Include="chap1_2_3_Done.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="cal.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
