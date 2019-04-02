@@ -2,28 +2,26 @@
 #include <string.h>
 #define max_string_size 100
 #define max_pattern_size 100
-int pmatch(char *string, char *pat);
-void fail(char *pat);
-int failure[max_pattern_size] = {3};
-/*
+void pmatch_all(char *string, char *pat, int *failure);
+void fail(char *pat, int *failure);
+/* input
 abcabcacab
-
-bbbbbabbbbbc
-*/
-char string[max_string_size] = "bbbbbabbbbbabc";
-char pat[max_pattern_size] = "aa";
+bbbbbabbbbbc */
 int main(void) {
-	int i;
+	char string[max_string_size];
+	char pat[max_pattern_size];
+	int failure[max_pattern_size] = { 0 };
 
-	fail(pat);
-	for (i = 0; failure[i] < max_pattern_size; i++)
-		printf("%2d", failure[i]);
-	printf("\n");
+	scanf("%s", string);
+	scanf("%s", pat);
+	fail(pat, failure);
+
+	pmatch_all(string, pat, failure);
 
 	return 0;
 }
-void fail(char * pat) {
-	int n = strlen(pat), j=0, i=0;
+void fail(char * pat, int *failure) {
+	int n = strlen(pat), j = 0, i = 0;
 	failure[0] = -1;
 	for (j = 1; j < n; j++) {
 		i = failure[j - 1];
@@ -35,8 +33,7 @@ void fail(char * pat) {
 		else failure[j] = -1;
 	}
 }
-int pmatch(char *string, char *pat) {
-	int ans[101];
+void pmatch_all(char *string, char *pat, int *failure) {
 	int i = 0, j = 0;
 	int lens = strlen(string); //i
 	int lenp = strlen(pat);    //j
@@ -48,14 +45,13 @@ int pmatch(char *string, char *pat) {
 		else j = failure[j - 1] + 1;
 
 		if (j == lenp) {
-			printf("%d\n", i-lenp);
+			printf("%d\n", i - lenp);
 			if (failure[j - 1] == -1) {
 				j = j - lenp; // j=0
 			}
 			else {
 				j = failure[j - 1] + 1;
 			}
-			
 		}
 	}
 }

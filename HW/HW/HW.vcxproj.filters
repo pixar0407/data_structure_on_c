@@ -39,5 +39,11 @@
     <ClCompile Include="cal.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="chap2_1_1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="chap2_2_1.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,12 @@
 # Data Structure on C
 data structure course, 19-1 at Sogang Univ<br>
 Book "Fundamentals of Data Structure in C, 2nd, Horowitz&Sahni"<br><br>
+### April, 1, 2019 @chap2
+* 텅빈 string 만들어 주기.<br>
+```c
+	char temp[25] = "\0"; // [25]와 같은 길이 없이 temp[] 같은 string을 만들면 문제가 생긴다.
+```
+
 ### March, 21, 2019 @HW Done_chap1_1_2.c
 * 코드 짜기 전에 반드시 추상화된 형태의 도표 그리고 할 것. <br>
 자료구조 첫 과제 진행하는데, 생각보다 시간이 오래 걸렸다. 24시간 걸림. <br>
